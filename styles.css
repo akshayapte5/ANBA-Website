@@ -1,3 +1,8 @@
+/* ============================================
+   ANBA AFTER WEAR — PREMIUM STYLESHEET
+   DaisyUI + Tailwind + Custom Animations
+   ============================================ */
+
 /* Global Base */
 html {
     scroll-behavior: smooth;
@@ -6,18 +11,18 @@ html {
 body {
     background-color: #F4F4F2;
     color: #0A0A0A;
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
     overflow-x: hidden;
     cursor: none;
 }
 
-a,
-button {
+a, button {
     cursor: none;
-    /* Let custom cursor handle hovering */
 }
 
-/* Custom Cursor */
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
 .custom-cursor {
     position: fixed;
     top: 0;
@@ -40,7 +45,9 @@ button {
     border: 1px solid white;
 }
 
-/* Base Fade Reveal (Legacy/Soft Reveal) */
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -50,23 +57,6 @@ button {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Hard Blink Keyframe */
-@keyframes blink-cursor {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
-.animate-blink {
-    animation: blink-cursor 1s step-end infinite;
 }
 
 /* Text Mask Reveal (The Odd Ritual Style) */
@@ -85,7 +75,29 @@ button {
     transform: translateY(0);
 }
 
-/* Bracket Button Style */
+/* Soft Fade Reveal */
+.fade-reveal {
+    opacity: 0;
+    transition: opacity 1.8s ease;
+}
+
+.fade-reveal.active {
+    opacity: 1;
+}
+
+/* Blinking Cursor */
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.animate-blink {
+    animation: blink-cursor 1s step-end infinite;
+}
+
+/* ============================================
+   BRACKET BUTTON (Signature CTA)
+   ============================================ */
 .btn-bracket {
     display: inline-flex;
     align-items: center;
@@ -146,7 +158,9 @@ button {
     transform: translateY(-100%);
 }
 
-/* Image Parallax Container */
+/* ============================================
+   PARALLAX IMAGE CONTAINERS
+   ============================================ */
 .parallax-container {
     overflow: hidden;
     position: relative;
@@ -159,7 +173,272 @@ button {
     will-change: transform;
 }
 
-/* Modals Override Custom Cursor */
+/* ============================================
+   HERO CAROUSEL (Crossfade)
+   ============================================ */
+.hero-carousel .carousel-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+}
+
+.hero-carousel .carousel-item.active-slide {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Navigation Dots */
+.carousel-dots {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 0;
+}
+
+.carousel-dot.active-dot {
+    background: white;
+    border-color: white;
+    transform: scale(1.3);
+}
+
+.carousel-dot:hover {
+    border-color: white;
+    transform: scale(1.15);
+}
+
+/* ============================================
+   MARQUEE TICKER
+   ============================================ */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+    white-space: nowrap;
+    padding: 0 2rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.marquee-item::after {
+    content: "✦";
+    font-style: normal;
+    opacity: 0.3;
+    font-size: 0.6em;
+}
+
+/* ============================================
+   LIGHTBOX MODAL
+   ============================================ */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.lightbox-overlay.lightbox-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.1);
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.lightbox-overlay.lightbox-active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100000;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+}
+
+/* ============================================
+   GALLERY HOVER OVERLAY
+   ============================================ */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.group:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Gallery item click hint */
+.gallery-click-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.group:hover .gallery-click-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   ANIMATED STAT COUNTERS
+   ============================================ */
+.stat-counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   TIMELINE (About Page)
+   ============================================ */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #C9A96E;
+    border: 3px solid #F4F4F2;
+    box-shadow: 0 0 0 2px #C9A96E;
+    flex-shrink: 0;
+}
+
+.timeline-line {
+    width: 2px;
+    background: linear-gradient(to bottom, #C9A96E, #E5E5E5);
+    flex-shrink: 0;
+}
+
+/* ============================================
+   PREMIUM CARD GLASS EFFECT
+   ============================================ */
+.card-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 229, 229, 0.5);
+    transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.card-glass:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* ============================================
+   HERO TEXT LEGIBILITY
+   ============================================ */
+.header-text {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   QUOTE SECTION STYLING
+   ============================================ */
+.quote-text-white-premium {
+    font-family: 'Funnel Display', sans-serif;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.quote-dark-block {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3.5rem 4.5rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ============================================
+   MODAL OVERRIDES
+   ============================================ */
 .modal-open,
 .modal-open * {
     cursor: auto !important;
@@ -170,62 +449,87 @@ button {
     display: none !important;
 }
 
-/* User Defined Hero Legibility Utility */
-.header-text {
-    color: #FFFFFF;
-    /* White */
+/* ============================================
+   TOAST NOTIFICATION
+   ============================================ */
+.toast-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99999;
+    transform: translateY(120%);
+    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.toast-notification.toast-visible {
+    transform: translateY(0);
+}
+
+/* ============================================
+   INSTAGRAM STRIP SECTION
+   ============================================ */
+.insta-strip {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.insta-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.insta-strip-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.insta-strip-item img {
+    transition: transform 0.7s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.insta-strip-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+.breadcrumb-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    /* This ensures it's readable over the horse/sky */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: #888;
+    transition: color 0.3s;
 }
 
-/* Premium Funnel Display Quote Styling */
-.quote-text-white-premium {
-    font-family: 'Funnel Display', sans-serif;
-    color: #FFFFFF !important;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+.breadcrumb-link:hover {
+    color: #0A0A0A;
 }
 
-/* Slick Fade Reveal Animation */
-.fade-reveal {
-    opacity: 0;
-    transition: opacity 1.8s ease;
+.breadcrumb-separator {
+    color: #E5E5E5;
+    margin: 0 0.75rem;
 }
 
-.fade-reveal.active {
-    opacity: 1;
-}
-
-
-/* Hard Black Block Overlay for maximum contrast */
-.quote-dark-block {
-    background-color: rgba(0, 0, 0, 0.4);
-    /* 40% opacity soft dark block */
-    padding: 3.5rem 4.5rem;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-/* Gallery Hover Overlay */
-.gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 10;
-    pointer-events: none;
-}
-.group:hover .gallery-overlay {
-    opacity: 1;
-}
-
-/* Refined Selection Highlight */
+/* ============================================
+   SELECTION HIGHLIGHT
+   ============================================ */
 ::selection {
     background-color: #0A0A0A;
     color: #F4F4F2;

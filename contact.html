@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="anba">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,13 @@
     <!-- Global Head Components -->
     <script src="head-loader.js"></script>
 </head>
-<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black">
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black font-body">
 
     <!-- Header -->
     <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
         <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+            <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-4 reveal">Reach Out</p>
+            <h1 class="font-display text-4xl md:text-6xl font-semibold tracking-tight mb-6 text-odd-black leading-none">
                 <span class="reveal-text"><span class="mask-inner">Get in Touch</span></span>
             </h1>
             <p class="reveal text-lg text-odd-gray max-w-2xl mx-auto font-light leading-relaxed">
@@ -21,40 +22,105 @@
         </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Direct Contact Info -->
+    <section class="py-24 bg-odd-white border-b border-odd-border">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
+                <!-- Email Section -->
+                <div class="reveal">
+                    <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-6">Send an Inquiry</p>
+                    <a href="mailto:info@anbaopc.com" class="font-display text-2xl md:text-4xl font-semibold text-odd-black hover:text-odd-accent transition-colors block mb-2">
+                        info@anbaopc.com
+                    </a>
+                    <p class="text-odd-gray text-sm font-light font-body mt-4 max-w-sm mx-auto md:mx-0">
+                        General inquiries and project collaborations — we respond within 24 hours.
+                    </p>
+                </div>
+
+                <!-- Phone Section -->
+                <div class="reveal" style="transition-delay: 150ms">
+                    <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-6">Voice Connection</p>
+                    <div class="space-y-4">
+                        <a href="tel:+919769551530" class="font-body text-xl md:text-2xl font-medium text-odd-black hover:text-odd-accent transition-colors block leading-none tracking-tight">
+                            +91 9769551530
+                        </a>
+                        <a href="tel:+919871041531" class="font-body text-xl md:text-2xl font-medium text-odd-black hover:text-odd-accent transition-colors block leading-none tracking-tight">
+                            +91 9871041531
+                        </a>
+                    </div>
+                    <p class="text-odd-gray text-sm font-light font-body mt-6 max-w-sm mx-auto md:mx-0">
+                        Available for urgent inquiries and direct consultations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form (Commented for now) -->
+    <!-- 
     <section class="py-32 bg-odd-offwhite">
         <div class="max-w-3xl mx-auto px-6">
-            <div class="reveal bg-odd-white p-10 md:p-16 border border-odd-border shadow-2xl">
-                <h3 class="text-2xl font-display font-bold text-odd-black mb-8">Send a Message</h3>
-                <form class="space-y-6">
+            <div class="reveal card-glass p-10 md:p-16 shadow-2xl">
+                <h3 class="text-2xl font-display font-semibold text-odd-black mb-2">Send a Message</h3>
+                <p class="text-odd-gray text-sm font-light mb-10">Or fill out the form below and we'll get back to you.</p>
+                <form class="space-y-6" id="contact-form" action="https://formsubmit.co/akshayapte3@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New message from ANBA After Wear website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="">
+                    <input type="text" name="_honey" style="display:none">
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs tracking-widest uppercase font-bold text-odd-gray block">Name</label>
-                            <input type="text" class="w-full bg-odd-offwhite border border-odd-border p-4 text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors" placeholder="John Doe">
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="text-xs tracking-widest uppercase font-bold text-odd-gray">Name</span>
+                            </label>
+                            <input type="text" name="name" placeholder="John Doe"
+                                class="input input-bordered w-full bg-odd-offwhite border-odd-border text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors font-body" required>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-xs tracking-widest uppercase font-bold text-odd-gray block">Email</label>
-                            <input type="email" class="w-full bg-odd-offwhite border border-odd-border p-4 text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors" placeholder="john@example.com">
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="text-xs tracking-widest uppercase font-bold text-odd-gray">Email</span>
+                            </label>
+                            <input type="email" name="email" placeholder="john@example.com"
+                                class="input input-bordered w-full bg-odd-offwhite border-odd-border text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors font-body" required>
                         </div>
                     </div>
-                    
-                    <div class="space-y-2">
-                        <label class="text-xs tracking-widest uppercase font-bold text-odd-gray block">Subject</label>
-                        <input type="text" class="w-full bg-odd-offwhite border border-odd-border p-4 text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors" placeholder="Project Inquiry">
+
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="text-xs tracking-widest uppercase font-bold text-odd-gray">Subject</span>
+                        </label>
+                        <input type="text" name="subject" placeholder="Project Inquiry"
+                            class="input input-bordered w-full bg-odd-offwhite border-odd-border text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors font-body">
                     </div>
-                    
-                    <div class="space-y-2">
-                        <label class="text-xs tracking-widest uppercase font-bold text-odd-gray block">Message</label>
-                        <textarea rows="6" class="w-full bg-odd-offwhite border border-odd-border p-4 text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="text-xs tracking-widest uppercase font-bold text-odd-gray">Message</span>
+                        </label>
+                        <textarea rows="6" name="message" placeholder="Tell us about your inquiry..."
+                            class="textarea textarea-bordered w-full bg-odd-offwhite border-odd-border text-odd-black placeholder-odd-gray/50 focus:outline-none focus:border-odd-black transition-colors resize-none font-body" required></textarea>
                     </div>
-                    
-                    <button type="submit" class="w-full bg-odd-black text-odd-white py-4 font-bold uppercase tracking-widest hover:bg-odd-gray transition-colors">
+
+                    <button type="submit"
+                        class="btn btn-block bg-odd-black text-odd-white border-odd-black hover:bg-odd-accent hover:border-odd-accent font-bold uppercase tracking-widest text-sm transition-all duration-300">
                         Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
+    -->
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="contact-toast">
+        <div class="alert bg-odd-black text-odd-white border border-white/10 shadow-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-body font-medium">Message sent successfully! We'll be in touch.</span>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="content/global.js"></script>

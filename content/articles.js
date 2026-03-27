@@ -19,7 +19,7 @@ window.ArticlesContent = [
         heroImage: "images/our_products.jpg",
         paragraph1: "In recent years, the digital landscape has seen a massive shift towards minimalism deeply intertwined with micro-animations. Premium brands are no longer relying on maximalist graphics, but rather the subtle way text reveals itself on scroll, or how a cursor uniquely interacts with a product image.",
         heading1: "The Psychology of Dark Modes vs Light Aesthetics",
-        paragraph2: "We found that while dark themes convey luxury and exclusivity\u2014akin to a velvet-lined jewelry box\u2014light themes paired with immense negative space and sharp typography evoke transparency, modernity, and approachability. The Odd Ritual methodology balances this by utilizing stark contrasts.",
+        paragraph2: "We found that while dark themes convey luxury and exclusivity—akin to a velvet-lined jewelry box—light themes paired with immense negative space and sharp typography evoke transparency, modernity, and approachability. The Odd Ritual methodology balances this by utilizing stark contrasts.",
         quote: "True premium design is invisible until you interact with it.",
         paragraph3: "As we look ahead to the next generation of web experiences, zero-build static sites powered by raw Vanilla JS and CSS masking are proving that you don't need heavy frameworks to deliver a buttery-smooth, 60fps luxury experience to your audience."
     },

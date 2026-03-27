@@ -37,8 +37,8 @@ window.GlobalContent = {
     footerDescription: "A modern homage to the game we love. Rooted in design, built for the community.",
 
     // Footer contact information
-    contactEmail: "hello@anbaafterwear.com",
-    contactPhone: "(555) 123-4567",
+    contactEmail: "info@anbaopc.com",
+    contactPhone: "+91 9769551530, 9871041531",
     contactAddress: "123 Fairway Drive, Los Angeles CA",
 
     // Social Media Links
@@ -49,7 +49,7 @@ window.GlobalContent = {
     },
 
     // Footer Copyright text
-    copyrightText: "\u00a9 2026 ANBA AFTER WEAR. ALL RIGHTS RESERVED.",
+    copyrightText: "© 2026 ANBA AFTER WEAR. ALL RIGHTS RESERVED.",
 
     // ----------------------------------------------------
     // 3. LEGAL / MODAL CONTENT
@@ -62,7 +62,7 @@ window.GlobalContent = {
                 <h3 class="font-bold uppercase tracking-widest text-xs mt-8 mb-4">Information We Collect</h3>
                 <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.</p>
                 <h3 class="font-bold uppercase tracking-widest text-xs mt-8 mb-4">Data Retention</h3>
-                <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft.</p>
+                <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft.</p>
                 <p>By continuing to use our website, you signify your acceptance of this policy.</p>
             </div>
         `,

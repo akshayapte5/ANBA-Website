@@ -1,48 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="anba">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal | ANBA After Wear</title>
-    <!-- Global Head Components -->
     <script src="head-loader.js"></script>
+    <style>
+        /* Blog Content Typography — ensures markdown renders with brand fonts */
+        .blog-content { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; }
+        .blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600; color: #0A0A0A;
+            margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.2;
+        }
+        .blog-content h2 { font-size: 1.75rem; letter-spacing: -0.02em; }
+        .blog-content h3 { font-size: 1.35rem; }
+        .blog-content h4 { font-size: 1.1rem; }
+        .blog-content p { margin-bottom: 1.5rem; line-height: 1.85; color: #333; font-weight: 300; }
+        .blog-content blockquote {
+            border-left: 4px solid #C9A96E; background: #ffffff;
+            padding: 1.5rem 2rem; margin: 2rem 0;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic; font-size: 1.4rem; color: #0A0A0A; line-height: 1.5;
+        }
+        .blog-content blockquote p { margin-bottom: 0; color: inherit; font-weight: 400; }
+        .blog-content ul, .blog-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        .blog-content li { margin-bottom: 0.5rem; line-height: 1.7; color: #333; font-weight: 300; }
+        .blog-content ul li { list-style-type: disc; }
+        .blog-content ol li { list-style-type: decimal; }
+        .blog-content strong { font-weight: 600; color: #0A0A0A; }
+        .blog-content em { font-style: italic; }
+        .blog-content a { color: #C9A96E; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
+        .blog-content a:hover { color: #0A0A0A; }
+        .blog-content code { background: #F4F4F2; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; border: 1px solid #E5E5E5; }
+        .blog-content hr { border: none; border-top: 1px solid #E5E5E5; margin: 2.5rem 0; }
+        .blog-content img { width: 100%; margin: 2rem 0; border: 1px solid #E5E5E5; }
+    </style>
 </head>
-<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black">
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black font-body">
 
     <!-- Header -->
-    <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
-        <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <p class="text-odd-gray text-xs tracking-widest uppercase font-bold mb-4" id="post-publish-date">Loading Date...</p>
-            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
-                <span class="reveal-text"><span class="mask-inner" id="post-title">Loading Article...</span></span>
+    <section class="pt-40 pb-12 relative overflow-hidden bg-odd-white border-b border-odd-border">
+        <div class="max-w-4xl mx-auto px-6 z-10 w-full">
+            <div class="mb-8 reveal">
+                <a href="index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="article.html" class="breadcrumb-link">Journal</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-link text-odd-black" id="breadcrumb-title">Article</span>
+            </div>
+            <p class="text-odd-accent text-xs tracking-widest uppercase font-bold mb-4 font-body" id="post-date"></p>
+            <h1 class="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4 text-odd-black leading-[1.1]" id="post-title">
+                Article Not Found
             </h1>
+            <p class="text-odd-gray text-sm font-body" id="post-author"></p>
         </div>
     </section>
 
     <!-- Article Body -->
     <section class="py-20 bg-odd-offwhite min-h-screen">
-        <div class="max-w-3xl mx-auto px-6 font-body font-light leading-relaxed text-odd-black space-y-8 text-lg">
-            
-            <div class="w-full h-[400px] mb-12 parallax-container rounded border border-odd-border/50">
-                <img id="post-hero-img" src="" alt="Hero" class="parallax-image object-cover w-full h-full text-[0px]">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="w-full h-[400px] mb-12 overflow-hidden border border-odd-border/50" id="post-hero-container">
+                <img id="post-hero-img" src="" alt="Hero" class="w-full h-full object-cover text-[0px]">
             </div>
-
-            <p class="reveal" id="post-p1"></p>
-
-            <h2 class="reveal font-display text-2xl font-bold tracking-tight text-odd-black mt-12 mb-4" id="post-h1"></h2>
-            
-            <p class="reveal" id="post-p2"></p>
-            
-            <blockquote class="reveal border-l-4 border-odd-black pl-6 py-2 my-12 italic text-2xl font-display text-odd-gray bg-odd-white p-6" id="post-quote"></blockquote>
-
-            <p class="reveal" id="post-p3"></p>
-
+            <div class="blog-content text-lg" id="post-body">
+                <p class="text-odd-gray text-center py-12">Select an article from the <a href="article.html">Journal</a> page.</p>
+            </div>
+            <div class="pt-12 mt-12 border-t border-odd-border">
+                <a href="article.html" class="btn-bracket text-odd-black">
+                    <span class="text-wrapper">
+                        <span class="original-text">← Back to Journal</span>
+                        <span class="hover-text">← Back to Journal</span>
+                    </span>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Scripts -->
     <script src="content/global.js"></script>
-    <script src="content/articles.js"></script>
+    <script src="content/blogs.js"></script>
     <script src="content-loader.js"></script>
     <script src="scripts.js"></script>
 </body>

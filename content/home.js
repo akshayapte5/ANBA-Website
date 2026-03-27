@@ -8,31 +8,62 @@
 
 window.HomeContent = {
     // ----------------------------------------------------
-    // 1. HERO SECTION (Top of the page)
+    // 1. HERO CAROUSEL SLIDES (Full-screen rotating hero)
     // ----------------------------------------------------
-    // Make changes here to change the main massive title on the homepage
+    heroSlides: [
+        {
+            image: "images/home_header_background.jpg",
+            titleLine1: "DESIGN",
+            titleLine2: "FOR",
+            titleLine3: "EVERYONE<span class='animate-blink'>.</span>",
+            subtitle: "Thoughtful design across brands, products and digital experiences. We help ideas become clear, usable, and beautifully crafted.",
+            buttonText: "EXPLORE COLLECTION",
+            buttonLink: "gallery.html"
+        },
+        {
+            image: "images/home_header_background_2.jpg",
+            titleLine1: "CRAFTED",
+            titleLine2: "WITH",
+            titleLine3: "PURPOSE<span class='animate-blink'>.</span>",
+            subtitle: "Every stitch tells a story. Premium streetwear born from authenticity and a passion for the game.",
+            buttonText: "OUR STORY",
+            buttonLink: "about.html"
+        },
+        {
+            image: "images/our_story.jpg",
+            titleLine1: "WEAR",
+            titleLine2: "YOUR",
+            titleLine3: "LEGACY<span class='animate-blink'>.</span>",
+            subtitle: "Join a community that values quality, heritage, and the art of self-expression.",
+            buttonText: "JOIN THE COMMUNITY",
+            buttonLink: "contact.html"
+        }
+    ],
+
+    // Legacy single-slide fallback keys (used by content-loader)
     heroTitleLine1: "DESIGN",
     heroTitleLine2: "FOR",
     heroTitleLine3: "EVERYONE<span class='animate-blink'>.</span>",
-
     heroSubtitle: "Thoughtful design across brands, products and digital experiences. We help ideas become clear, usable, and beautifully crafted.",
     heroButtonText: "EXPLORE COLLECTION",
     heroButtonLink: "gallery.html",
-
-    // The single stretched background image natively behind the hero text
     heroBackgroundImage: "images/home_header_background.jpg",
 
     // ----------------------------------------------------
-    // 2. MIDDLE QUOTE DIVIDER
+    // 2. MARQUEE TICKER TEXT
     // ----------------------------------------------------
-    // The large text quote separating the hero and the collections
+    marqueeText: "ANBA AFTER WEAR · PREMIUM STREETWEAR · EST. 2026 · CRAFTED WITH PURPOSE · WEAR YOUR LEGACY",
+
+    // ----------------------------------------------------
+    // 3. MIDDLE QUOTE DIVIDER
+    // ----------------------------------------------------
     quoteLine1: "Born from a shared love of the game,",
     quoteLine2: "rooted in authenticity and creativity",
     quoteLine3: "expressed through what we wear.",
     quoteImage: "images/craftmanship.jpg",
 
     // ----------------------------------------------------
-    // 3. BRAND PILLARS (The 3 large vertical images)
+    // 4. BRAND PILLARS (The 3 large vertical images)
     // ----------------------------------------------------
     pillars: [
         {
@@ -56,13 +87,12 @@ window.HomeContent = {
     ],
 
     // ----------------------------------------------------
-    // 4. FEATURED WEAR GRID
+    // 5. FEATURED WEAR GRID
     // ----------------------------------------------------
     featuredWearSectionTitle: "Featured Wear",
     featuredWearButtonText: "VIEW SHOP",
     featuredWearButtonLink: "gallery.html",
 
-    // The exact 6 items shown in the bottom grid
     featuredWearGrid: [
         {
             name: "Odd Ritual Script Cap [Black]",
@@ -100,5 +130,18 @@ window.HomeContent = {
             image: "images/home_header_background_2.jpg",
             link: "gallery.html"
         }
+    ],
+
+    // ----------------------------------------------------
+    // 6. INSTAGRAM-STYLE IMAGE STRIP
+    // ----------------------------------------------------
+    instaImages: [
+        "images/our_products.jpg",
+        "images/our_story.jpg",
+        "images/craftmanship.jpg",
+        "images/join_us.jpg",
+        "images/craftmanship_2.jpg",
+        "images/home_header_background.jpg",
+        "images/home_header_background_2.jpg"
     ]
 };

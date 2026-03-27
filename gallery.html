@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="anba">
 
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,13 @@
     <script src="head-loader.js"></script>
 </head>
 
-<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black">
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black font-body">
 
     <!-- Header -->
     <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
         <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+            <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-4 reveal">Collection</p>
+            <h1 class="font-display text-4xl md:text-6xl font-semibold tracking-tight mb-6 text-odd-black leading-none">
                 <span class="reveal-text"><span class="mask-inner">Our Gallery</span></span>
             </h1>
             <p class="reveal text-lg text-odd-gray max-w-2xl mx-auto font-light leading-relaxed">
@@ -23,51 +24,112 @@
         </div>
     </section>
 
-    <!-- Gallery Grid -->
-    <section class="py-20 bg-odd-offwhite">
-        <div class="max-w-[1600px] mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-                <div class="reveal overflow-hidden aspect-square relative group parallax-container">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/our_products.jpg" alt="Our Products"
-                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+    <!-- Gallery Hero Carousel -->
+    <section class="relative h-[60vh] overflow-hidden bg-odd-black">
+        <div class="carousel w-full h-full" id="gallery-hero-carousel">
+            <div class="carousel-item relative w-full" id="gslide1">
+                <img src="images/home_header_background.jpg" class="w-full h-full object-cover" alt="Collection 1">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white z-10">
+                    <p class="font-display text-3xl font-semibold">Spring Collection</p>
+                    <p class="text-white/70 text-sm font-body tracking-widest uppercase mt-1">2026</p>
                 </div>
-                <div class="reveal overflow-hidden aspect-square relative group bg-odd-white"
-                    style="transition-delay: 100ms">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/our_story.jpg" alt="Our Story"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+            </div>
+            <div class="carousel-item relative w-full" id="gslide2">
+                <img src="images/home_header_background_2.jpg" class="w-full h-full object-cover" alt="Collection 2">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white z-10">
+                    <p class="font-display text-3xl font-semibold">Heritage Line</p>
+                    <p class="text-white/70 text-sm font-body tracking-widest uppercase mt-1">Premium</p>
                 </div>
-                <div class="reveal overflow-hidden aspect-square relative group parallax-container"
-                    style="transition-delay: 200ms">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/craftmanship.jpg" alt="Craftsmanship"
-                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
-                </div>
-                <div class="reveal overflow-hidden aspect-[4/3] lg:col-span-2 relative group bg-odd-white">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/home_header_background.jpg" alt="Header Background"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                </div>
-                <div class="reveal overflow-hidden aspect-[4/3] relative group parallax-container">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/join_us.jpg" alt="Join Us"
-                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
-                </div>
-                <div class="reveal overflow-hidden aspect-square relative group bg-odd-white">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/craftmanship_2.jpg" alt="Craftsmanship Detail"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                </div>
-                <div class="reveal overflow-hidden aspect-square relative group parallax-container"
-                    style="transition-delay: 100ms">
-                    <div class="gallery-overlay"></div>
-                    <img src="images/home_header_background_2.jpg" alt="Header Background Alt"
-                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+            </div>
+            <div class="carousel-item relative w-full" id="gslide3">
+                <img src="images/our_story.jpg" class="w-full h-full object-cover" alt="Collection 3">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8 text-white z-10">
+                    <p class="font-display text-3xl font-semibold">Our Legacy</p>
+                    <p class="text-white/70 text-sm font-body tracking-widest uppercase mt-1">Since 2026</p>
                 </div>
             </div>
         </div>
+        <!-- Gallery Carousel Navigation -->
+        <div class="absolute bottom-8 right-8 flex gap-3 z-20">
+            <a href="#gslide1" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors"></a>
+            <a href="#gslide2" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors"></a>
+            <a href="#gslide3" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors"></a>
+        </div>
     </section>
+
+    <!-- Masonry Gallery Grid -->
+    <section class="py-20 bg-odd-offwhite">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 auto-rows-[250px]" id="gallery-masonry">
+
+                <!-- Tall item -->
+                <div class="reveal overflow-hidden relative group row-span-2 cursor-pointer gallery-item" onclick="openLightbox('images/our_products.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/our_products.jpg" alt="Our Products"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Standard item -->
+                <div class="reveal overflow-hidden relative group cursor-pointer gallery-item" style="transition-delay: 100ms" onclick="openLightbox('images/our_story.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/our_story.jpg" alt="Our Story"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Standard item -->
+                <div class="reveal overflow-hidden relative group cursor-pointer gallery-item" style="transition-delay: 200ms" onclick="openLightbox('images/craftmanship.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/craftmanship.jpg" alt="Craftsmanship"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Wide item -->
+                <div class="reveal overflow-hidden relative group cursor-pointer gallery-item col-span-2" onclick="openLightbox('images/home_header_background.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/home_header_background.jpg" alt="Header Background"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Standard item -->
+                <div class="reveal overflow-hidden relative group cursor-pointer gallery-item" onclick="openLightbox('images/join_us.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/join_us.jpg" alt="Join Us"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Tall item -->
+                <div class="reveal overflow-hidden relative group row-span-2 cursor-pointer gallery-item" onclick="openLightbox('images/craftmanship_2.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/craftmanship_2.jpg" alt="Craftsmanship Detail"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+                <!-- Wide item -->
+                <div class="reveal overflow-hidden relative group cursor-pointer gallery-item col-span-2" style="transition-delay: 100ms" onclick="openLightbox('images/home_header_background_2.jpg')">
+                    <div class="gallery-overlay"></div>
+                    <span class="gallery-click-hint">View</span>
+                    <img src="images/home_header_background_2.jpg" alt="Header Background Alt"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
 
     <!-- Scripts -->
     <script src="content/global.js"></script>

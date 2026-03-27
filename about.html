@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="anba">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,20 @@
     <!-- Global Head Components -->
     <script src="head-loader.js"></script>
 </head>
-<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-offwhite text-odd-black">
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-offwhite text-odd-black font-body">
 
     <!-- Header -->
     <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
         <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+            <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-4 reveal">Our Identity</p>
+            <h1 class="font-display text-4xl md:text-6xl font-semibold tracking-tight mb-6 text-odd-black leading-none">
                 <span class="reveal-text"><span class="mask-inner">Our Heritage</span></span>
             </h1>
             <p class="reveal text-lg text-odd-gray max-w-2xl mx-auto font-light leading-relaxed">
-                We are a digital agency specializing in premium web experiences, brand guidelines, and product design from idea to launch.
+                We are a premium streetwear brand specializing in high-end, design-forward pieces that bridge the gap between the game and everyday life.
             </p>
             
-            <div class="reveal w-full h-[400px] rounded-2xl overflow-hidden mt-16 parallax-container">
+            <div class="reveal w-full h-[400px] overflow-hidden mt-16 parallax-container">
                 <img src="images/home_header_background_2.jpg" alt="About Hero" class="parallax-image">
             </div>
         </div>
@@ -29,40 +30,84 @@
     <section class="py-32 bg-odd-offwhite">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center border-b border-odd-border pb-32 mb-32">
-                <div class="reveal overflow-hidden rounded-2xl parallax-container h-[550px]">
+                <div class="reveal overflow-hidden parallax-container h-[550px]">
                     <img src="images/craftmanship.jpg" alt="Mission" class="parallax-image">
                 </div>
                 <div>
-                    <h2 class="font-display text-xs md:text-sm uppercase tracking-widest font-bold text-odd-gray mb-4">
-                        <span class="reveal-text"><span class="mask-inner">( OUR MISSION )</span></span>
-                    </h2>
-                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-6 text-odd-black tracking-tight">Crafting the Future</h3>
-                    <p class="text-odd-gray text-lg leading-relaxed font-light mb-6">
-                        We believe that digital products should be as beautiful as they are functional. Our team of designers, engineers, and strategists work together to build platforms that elevate brands.
+                    <p class="text-odd-accent text-xs tracking-[0.3em] uppercase font-bold font-body mb-3 reveal">( Our Mission )</p>
+                    <h3 class="font-display text-3xl md:text-4xl font-semibold mb-6 text-odd-black tracking-tight reveal">Crafting the Future</h3>
+                    <p class="text-odd-gray text-lg leading-relaxed font-light mb-6 reveal">
+                        We believe that what you wear should reflect who you are. Our team of designers and craftsmen work together to build pieces that elevate your everyday wardrobe.
                     </p>
-                    <p class="text-odd-gray leading-relaxed font-light">
-                        Every pixel, every animation, and every interaction is meticulously planned to ensure that your users have an unforgettable experience.
+                    <p class="text-odd-gray leading-relaxed font-light reveal">
+                        Every stitch, every fabric choice, and every design detail is meticulously planned to ensure that quality and style are never compromised.
                     </p>
                 </div>
             </div>
 
-            <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="reveal">
-                    <p class="text-5xl font-display font-bold text-odd-black mb-2">50+</p>
-                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Projects</p>
+            <!-- Stats with Animated Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-32">
+                <div class="reveal card-glass p-8">
+                    <p class="text-5xl font-display font-semibold text-odd-black mb-2 stat-counter" data-target="50" data-suffix="+">0</p>
+                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Designs</p>
                 </div>
-                <div class="reveal" style="transition-delay: 100ms">
-                    <p class="text-5xl font-display font-bold text-odd-black mb-2">12</p>
-                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Awards</p>
+                <div class="reveal card-glass p-8" style="transition-delay: 100ms">
+                    <p class="text-5xl font-display font-semibold text-odd-black mb-2 stat-counter" data-target="12" data-suffix="">0</p>
+                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Collections</p>
                 </div>
-                <div class="reveal" style="transition-delay: 200ms">
-                    <p class="text-5xl font-display font-bold text-odd-black mb-2">5M+</p>
-                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Users</p>
+                <div class="reveal card-glass p-8" style="transition-delay: 200ms">
+                    <p class="text-5xl font-display font-semibold text-odd-black mb-2 stat-counter" data-target="5" data-suffix="K+">0</p>
+                    <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Community</p>
                 </div>
-                <div class="reveal" style="transition-delay: 300ms">
-                    <p class="text-5xl font-display font-bold text-odd-black mb-2">24/7</p>
+                <div class="reveal card-glass p-8" style="transition-delay: 300ms">
+                    <p class="text-5xl font-display font-semibold text-odd-black mb-2 stat-counter" data-target="24" data-suffix="/7">0</p>
                     <p class="text-odd-gray text-xs tracking-widest uppercase font-bold">Support</p>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-3 reveal">Milestones</p>
+                    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight text-odd-black reveal">Our Journey</h2>
+                </div>
+
+                <div class="flex flex-col gap-0">
+                    <!-- Milestone 1 -->
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line h-20"></div>
+                        </div>
+                        <div class="pb-12">
+                            <p class="text-odd-accent text-xs tracking-widest uppercase font-bold mb-1">2026</p>
+                            <h4 class="font-display text-xl font-semibold text-odd-black mb-2">Brand Founded</h4>
+                            <p class="text-odd-gray text-sm font-light leading-relaxed">ANBA After Wear was born from a shared love of the game and a desire to bridge premium fashion with authentic streetwear culture.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div class="reveal flex gap-6 items-start" style="transition-delay: 150ms">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line h-20"></div>
+                        </div>
+                        <div class="pb-12">
+                            <p class="text-odd-accent text-xs tracking-widest uppercase font-bold mb-1">2026</p>
+                            <h4 class="font-display text-xl font-semibold text-odd-black mb-2">First Collection Launch</h4>
+                            <p class="text-odd-gray text-sm font-light leading-relaxed">Our debut Heritage line launched with 12 handcrafted pieces, each designed to be worn on and off the course.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 3 -->
+                    <div class="reveal flex gap-6 items-start" style="transition-delay: 300ms">
+                        <div class="flex flex-col items-center">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="pb-8">
+                            <p class="text-odd-accent text-xs tracking-widest uppercase font-bold mb-1">2026</p>
+                            <h4 class="font-display text-xl font-semibold text-odd-black mb-2">Community Grows</h4>
+                            <p class="text-odd-gray text-sm font-light leading-relaxed">We surpassed 5,000 community members and opened our digital showroom for the world to experience ANBA After Wear.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

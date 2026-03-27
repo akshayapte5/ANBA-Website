@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="anba">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal | ANBA After Wear</title>
-    <!-- Global Head Components -->
     <script src="head-loader.js"></script>
 </head>
-<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-offwhite text-odd-black">
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-offwhite text-odd-black font-body">
 
     <!-- Header -->
     <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
         <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+            <p class="text-odd-gray text-xs tracking-[0.3em] uppercase font-bold font-body mb-4 reveal">Stories & Insights</p>
+            <h1 class="font-display text-4xl md:text-6xl font-semibold tracking-tight mb-6 text-odd-black leading-none">
                 <span class="reveal-text"><span class="mask-inner">Our Journal</span></span>
             </h1>
             <p class="reveal text-lg text-odd-gray max-w-2xl mx-auto font-light leading-relaxed">
-                Thoughts, stories, and insights on design, culture, and golf.
+                Thoughts, stories, and insights on design, culture, and the game.
             </p>
         </div>
     </section>
@@ -24,16 +24,15 @@
     <!-- Blogs Grid -->
     <section class="py-32 bg-odd-offwhite min-h-[60vh]">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Data populated dynamically by scripts.js -->
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Javascript will inject <article> blocks here styled exactly for Odd Ritual -->
+                <!-- Blog cards injected by content-loader.js from content/blogs.js -->
             </div>
         </div>
     </section>
 
-    <!-- Global Scripts -->
+    <!-- Scripts -->
     <script src="content/global.js"></script>
-    <script src="content/articles.js"></script>
+    <script src="content/blogs.js"></script>
     <script src="content-loader.js"></script>
     <script src="scripts.js"></script>
 </body>
