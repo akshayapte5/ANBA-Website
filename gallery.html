@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | ANBA After Wear</title>
+    <!-- Global Head Components -->
+    <script src="head-loader.js"></script>
+</head>
+
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black">
+
+    <!-- Header -->
+    <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
+        <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
+            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+                <span class="reveal-text"><span class="mask-inner">Our Gallery</span></span>
+            </h1>
+            <p class="reveal text-lg text-odd-gray max-w-2xl mx-auto font-light leading-relaxed">
+                A visual showcase of our finest work, products, and community moments.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20 bg-odd-offwhite">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                <div class="reveal overflow-hidden aspect-square relative group parallax-container">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/our_products.jpg" alt="Our Products"
+                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-square relative group bg-odd-white"
+                    style="transition-delay: 100ms">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/our_story.jpg" alt="Our Story"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-square relative group parallax-container"
+                    style="transition-delay: 200ms">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/craftmanship.jpg" alt="Craftsmanship"
+                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-[4/3] lg:col-span-2 relative group bg-odd-white">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/home_header_background.jpg" alt="Header Background"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-[4/3] relative group parallax-container">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/join_us.jpg" alt="Join Us"
+                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-square relative group bg-odd-white">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/craftmanship_2.jpg" alt="Craftsmanship Detail"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                </div>
+                <div class="reveal overflow-hidden aspect-square relative group parallax-container"
+                    style="transition-delay: 100ms">
+                    <div class="gallery-overlay"></div>
+                    <img src="images/home_header_background_2.jpg" alt="Header Background Alt"
+                        class="parallax-image group-hover:scale-110 transition-transform duration-1000">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="content/global.js"></script>
+    <script src="content-loader.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

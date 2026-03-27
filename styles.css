@@ -1,0 +1,232 @@
+/* Global Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F4F4F2;
+    color: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a,
+button {
+    cursor: none;
+    /* Let custom cursor handle hovering */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hovering {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+}
+
+/* Base Fade Reveal (Legacy/Soft Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hard Blink Keyframe */
+@keyframes blink-cursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation: blink-cursor 1s step-end infinite;
+}
+
+/* Text Mask Reveal (The Odd Ritual Style) */
+.reveal-text {
+    overflow: hidden;
+    display: block;
+}
+
+.reveal-text span.mask-inner {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 1.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.reveal-text.active span.mask-inner {
+    transform: translateY(0);
+}
+
+/* Bracket Button Style */
+.btn-bracket {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
+    overflow: hidden;
+}
+
+.btn-bracket::before {
+    content: "[ ";
+    margin-right: 0.5rem;
+    transition: transform 0.4s;
+}
+
+.btn-bracket::after {
+    content: " ]";
+    margin-left: 0.5rem;
+    transition: transform 0.4s;
+}
+
+.btn-bracket .text-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-bracket .original-text {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.btn-bracket .hover-text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.btn-bracket:hover::before {
+    transform: translateX(-4px);
+}
+
+.btn-bracket:hover::after {
+    transform: translateX(4px);
+}
+
+.btn-bracket:hover .original-text {
+    transform: translateY(-100%);
+}
+
+.btn-bracket:hover .hover-text {
+    transform: translateY(-100%);
+}
+
+/* Image Parallax Container */
+.parallax-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-image {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+/* Modals Override Custom Cursor */
+.modal-open,
+.modal-open * {
+    cursor: auto !important;
+}
+
+.modal-open .custom-cursor {
+    opacity: 0 !important;
+    display: none !important;
+}
+
+/* User Defined Hero Legibility Utility */
+.header-text {
+    color: #FFFFFF;
+    /* White */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    /* This ensures it's readable over the horse/sky */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium Funnel Display Quote Styling */
+.quote-text-white-premium {
+    font-family: 'Funnel Display', sans-serif;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Slick Fade Reveal Animation */
+.fade-reveal {
+    opacity: 0;
+    transition: opacity 1.8s ease;
+}
+
+.fade-reveal.active {
+    opacity: 1;
+}
+
+
+/* Hard Black Block Overlay for maximum contrast */
+.quote-dark-block {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 40% opacity soft dark block */
+    padding: 3.5rem 4.5rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gallery Hover Overlay */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+.group:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Refined Selection Highlight */
+::selection {
+    background-color: #0A0A0A;
+    color: #F4F4F2;
+}

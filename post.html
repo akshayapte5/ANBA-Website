@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | ANBA After Wear</title>
+    <!-- Global Head Components -->
+    <script src="head-loader.js"></script>
+</head>
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-white text-odd-black">
+
+    <!-- Header -->
+    <section class="pt-40 pb-20 relative overflow-hidden bg-odd-white border-b border-odd-border">
+        <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
+            <p class="text-odd-gray text-xs tracking-widest uppercase font-bold mb-4" id="post-publish-date">Loading Date...</p>
+            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-odd-black leading-none">
+                <span class="reveal-text"><span class="mask-inner" id="post-title">Loading Article...</span></span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="py-20 bg-odd-offwhite min-h-screen">
+        <div class="max-w-3xl mx-auto px-6 font-body font-light leading-relaxed text-odd-black space-y-8 text-lg">
+            
+            <div class="w-full h-[400px] mb-12 parallax-container rounded border border-odd-border/50">
+                <img id="post-hero-img" src="" alt="Hero" class="parallax-image object-cover w-full h-full text-[0px]">
+            </div>
+
+            <p class="reveal" id="post-p1"></p>
+
+            <h2 class="reveal font-display text-2xl font-bold tracking-tight text-odd-black mt-12 mb-4" id="post-h1"></h2>
+            
+            <p class="reveal" id="post-p2"></p>
+            
+            <blockquote class="reveal border-l-4 border-odd-black pl-6 py-2 my-12 italic text-2xl font-display text-odd-gray bg-odd-white p-6" id="post-quote"></blockquote>
+
+            <p class="reveal" id="post-p3"></p>
+
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="content/global.js"></script>
+    <script src="content/articles.js"></script>
+    <script src="content-loader.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

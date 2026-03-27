@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANBA After Wear</title>
+    <!-- Global Head Components -->
+    <script src="head-loader.js"></script>
+</head>
+
+<body class="antialiased selection:bg-odd-black selection:text-odd-white bg-odd-offwhite text-odd-black">
+
+    <!-- Hero Section -->
+    <section id="hero-section"
+        class="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden hero-section bg-cover bg-center">
+
+        <!-- Elegant Dark Overlay to Dull the Background and Pop White Text -->
+        <div
+            class="absolute inset-0 bg-black/40 z-0 pointer-events-none transition-opacity duration-1000 hover:bg-black/50">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center gap-12 relative z-10">
+            <!-- Center Header -->
+            <div class="w-full max-w-5xl text-center pt-10 flex flex-col items-center">
+                <h1 class="font-display text-5xl md:text-7xl lg:text-[5.5rem] mb-6 leading-[0.9] header-text">
+                    <span class="reveal-text"><span class="mask-inner"></span></span>
+                    <span class="reveal-text"><span class="mask-inner"></span></span>
+                    <span class="reveal-text"><span class="mask-inner"></span></span>
+                </h1>
+
+                <p class="reveal text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed text-center header-text">
+                </p>
+
+                <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+                    <a href="gallery.html" class="btn-bracket header-text">
+                        <span class="text-wrapper">
+                            <span class="original-text"></span>
+                            <span class="hover-text"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote / Visual Divider -->
+    <div id="quote-section"
+        class="py-40 md:py-56 border-y border-odd-border overflow-hidden relative flex justify-center items-center text-center px-6 min-h-[60vh] bg-fixed bg-center bg-cover bg-no-repeat group">
+        <!-- Filter Overlay specifically removed at User request -->
+
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center quote-dark-block rounded-none border border-white/10 shadow-2xl transition-all duration-700 fade-reveal">
+            <h2 class="text-xl md:text-2xl lg:text-3xl quote-text-white-premium text-center">
+                <span class="fade-reveal block"><span class="mask-inner"></span></span>
+                <span class="fade-reveal block"><span class="mask-inner"></span></span>
+                <span class="fade-reveal block"><span class="mask-inner"></span></span>
+            </h2>
+        </div>
+    </div>
+
+    <!-- Brand Pillars -->
+    <section class="py-24 bg-odd-white border-y border-odd-border overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div id="brand-pillars-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Javascript will inject Brand Pillars here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Wear Grid -->
+    <section class="py-32 bg-odd-offwhite">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div class="mb-2 border-b border-odd-border pb-2 flex justify-between items-end">
+                <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-odd-black leading-none">
+                    <span class="reveal-text"><span id="featured-wear-title" class="mask-inner"></span></span>
+                </h2>
+                <div class="reveal hidden md:block">
+                    <a id="featured-wear-button" href="gallery.html"
+                        class="btn-bracket text-odd-black text-sm font-bold">
+                        <span class="text-wrapper">
+                            <span class="original-text"></span>
+                            <span class="hover-text"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="featured-wear-grid" class="flex overflow-x-auto gap-[2px] pb-8 hide-scrollbar cursor-grab">
+                <!-- Javascript will inject Featured Wear cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- Content Master Files -->
+    <script src="content/global.js"></script>
+    <script src="content/home.js"></script>
+
+    <!-- Injection Engine & Core Logic -->
+    <script src="content-loader.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
